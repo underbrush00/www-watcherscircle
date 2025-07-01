@@ -19,30 +19,32 @@
   </header>
 
   <main>
-    <p><strong>This form is 100% anonymous.</strong> No names, no logins, no tracking. You do not need to provide personal information.</p>
+    <p><strong>This space is 100% anonymous.</strong> No logins, no tracking. You don’t need to give your name or identity.</p>
 
-    <p>Use this space to report concerns, harms, or misconduct that affect land, people, or community well-being — especially by those in positions of power. We welcome tips about:</p>
+    <p>We welcome tips about:</p>
     <ul>
       <li>Environmental violations</li>
       <li>Exploitation of vulnerable people</li>
-      <li>Corruption within leadership or agencies</li>
+      <li>Corruption within leadership</li>
       <li>Misuse of funding or benefits</li>
       <li>Violence, threats, or coercion</li>
     </ul>
 
-    <p>If known, include:</p>
-    <ul>
-      <li>Location(s)</li>
-      <li>People or organizations involved</li>
-      <li>Dates or timelines</li>
-      <li>Any links, references, or evidence</li>
-    </ul>
+    <p>If known, include:
+      <ul>
+        <li>Location(s)</li>
+        <li>People or organizations involved</li>
+        <li>Dates or timelines</li>
+        <li>Links or evidence</li>
+      </ul>
+    </p>
 
-    <p><em>All submissions are reviewed in private. If you want follow-up, include a ProtonMail address inside your message — but this is not required.</em></p>
+    <p><em>All submissions are reviewed privately. Include a ProtonMail address if you want optional follow-up.</em></p>
 
+    <!-- No form tag at all -->
     <label for="message">Your Message:</label><br>
-    <textarea id="message" rows="10" required></textarea><br>
-    <button onclick="submitTip()" class="button">Send Anonymously</button>
+    <textarea id="message" rows="10" placeholder="Enter your anonymous tip here..." required></textarea><br>
+    <button onclick="redirect()" class="button">Send Anonymously</button>
   </main>
 
   <footer>
@@ -50,13 +52,14 @@
   </footer>
 
   <script>
-    function submitTip() {
+    function redirect() {
       const msg = document.getElementById('message').value;
-      if (msg.trim() === '') {
-        alert('Please enter a message.');
+      if (!msg.trim()) {
+        alert('Please enter a message before submitting.');
         return;
       }
-      window.location.href = 'submitted.html';
+      // Simulate success
+      window.location.href = 'thankyou.html';
     }
   </script>
 </body>
