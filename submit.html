@@ -40,11 +40,9 @@
 
     <p><em>All submissions are reviewed in private. If you want follow-up, include a ProtonMail address inside your message — but this is not required.</em></p>
 
-    <form id="anonForm">
-      <label for="message">Your Message:</label><br>
-      <textarea id="message" name="body" rows="10" required></textarea><br>
-      <input type="submit" value="Send Anonymously" class="button" />
-    </form>
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" rows="10" required></textarea><br>
+    <button onclick="submitTip()" class="button">Send Anonymously</button>
   </main>
 
   <footer>
@@ -52,10 +50,14 @@
   </footer>
 
   <script>
-    document.getElementById('anonForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    function submitTip() {
+      const msg = document.getElementById('message').value;
+      if (msg.trim() === '') {
+        alert('Please enter a message.');
+        return;
+      }
       window.location.href = 'submitted.html';
-    });
+    }
   </script>
 </body>
 </html>
