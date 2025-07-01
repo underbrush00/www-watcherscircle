@@ -40,7 +40,7 @@
 
     <p><em>All submissions are reviewed in private. If you want follow-up, include a ProtonMail address inside your message — but this is not required.</em></p>
 
-    <form method="GET" action="submitted.html">
+    <form id="anonForm">
       <label for="message">Your Message:</label><br>
       <textarea id="message" name="body" rows="10" required></textarea><br>
       <input type="submit" value="Send Anonymously" class="button" />
@@ -50,5 +50,12 @@
   <footer>
     <p>&copy; 2025 Watchers Circle</p>
   </footer>
+
+  <script>
+    document.getElementById('anonForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'submitted.html';
+    });
+  </script>
 </body>
 </html>
