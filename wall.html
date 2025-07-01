@@ -2,66 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wall of Accountability | Watchers Circle</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Wall of Accountability</h1>
-    <p class="intro">
-      This space is reserved for verified cases of misconduct submitted through Watchers Circle.
-      Updates are published with care and community safety in mind.
-    </p>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="submit.html">Submit a Tip</a></li>
+        <li><a href="wall.html" class="active">Wall</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <p>No entries are publicly listed yet. Current submissions are under review.</p>
-    <section class="entry">
-  <h2>Sample Entry #1 – Environmental Harm</h2>
-  <p><strong>Location:</strong> Northern Ontario, near Wabigoon River</p>
-  <p><strong>Concern:</strong> Ongoing illegal dumping from logging operations contaminating waterways.</p>
-  <p><strong>Involved:</strong> Local forestry operator, unnamed contract manager</p>
-  <p><strong>Date:</strong> Reported May 2024, observed over several months</p>
-  <p class="note">⚠️ Sample data only – not a real report.</p>
-</section>
+    <p>This page displays verified or sample reports submitted to Watchers Circle. All entries are anonymized and reviewed prior to public listing.</p>
 
-<section class="entry">
-  <h2>Sample Entry #2 – Misuse of Funding</h2>
-  <p><strong>Location:</strong> Saskatchewan (Urban Indigenous Services)</p>
-  <p><strong>Concern:</strong> Grant funds reportedly diverted to personal travel expenses</p>
-  <p><strong>Involved:</strong> Executive Director of a registered non-profit (name withheld)</p>
-  <p><strong>Date:</strong> February 2023 – Ongoing audit requested</p>
-  <p class="note">⚠️ Sample data only – not a real report.</p>
-</section>
-
-<section class="entry">
-  <h2>Sample Entry #3 – Coercion in Shelter Services</h2>
-  <p><strong>Location:</strong> BC Lower Mainland</p>
-  <p><strong>Concern:</strong> Staff threatening to revoke housing if residents report mistreatment</p>
-  <p><strong>Involved:</strong> Transitional housing manager, multiple unnamed staff</p>
-  <p><strong>Date:</strong> March 2024</p>
-  <p class="note">⚠️ Sample data only – not a real report.</p>
-</section>
     <label for="filter">Filter by Category:</label>
-<select id="filter" onchange="filterEntries()">
-  <option value="all">Show All</option>
-  <option value="environment">Environmental Harm</option>
-  <option value="corruption">Misuse of Funding</option>
-  <option value="services">Abuse in Services</option>
-</select>
+    <select id="filter" onchange="filterEntries()">
+      <option value="all">Show All</option>
+      <option value="environment">Environmental Harm</option>
+      <option value="corruption">Misuse of Funding</option>
+      <option value="services">Abuse in Services</option>
+    </select>
 
+    <section class="entry environment">
+      <h2>Sample Entry #1 – Environmental Harm</h2>
+      <p><strong>Location:</strong> Northern Ontario, near Wabigoon River</p>
+      <p><strong>Concern:</strong> Ongoing illegal dumping from logging operations contaminating waterways.</p>
+      <p><strong>Involved:</strong> Local forestry operator, unnamed contract manager</p>
+      <p><strong>Date:</strong> Reported May 2024, observed over several months</p>
+      <p class="note">⚠️ Sample data only – not a real report.</p>
+    </section>
 
+    <section class="entry corruption">
+      <h2>Sample Entry #2 – Misuse of Funding</h2>
+      <p><strong>Location:</strong> Saskatchewan (Urban Indigenous Services)</p>
+      <p><strong>Concern:</strong> Grant funds reportedly diverted to personal travel expenses</p>
+      <p><strong>Involved:</strong> Executive Director of a registered non-profit (name withheld)</p>
+      <p><strong>Date:</strong> February 2023 – Ongoing audit requested</p>
+      <p class="note">⚠️ Sample data only – not a real report.</p>
+    </section>
+
+    <section class="entry services">
+      <h2>Sample Entry #3 – Coercion in Shelter Services</h2>
+      <p><strong>Location:</strong> BC Lower Mainland</p>
+      <p><strong>Concern:</strong> Staff threatening to revoke housing if residents report mistreatment</p>
+      <p><strong>Involved:</strong> Transitional housing manager, multiple unnamed staff</p>
+      <p><strong>Date:</strong> March 2024</p>
+      <p class="note">⚠️ Sample data only – not a real report.</p>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Watchers Circle</p>
   </footer>
+
+  <script>
+    function filterEntries() {
+      const filter = document.getElementById('filter').value;
+      const entries = document.querySelectorAll('.entry');
+
+      entries.forEach(entry => {
+        if (filter === 'all' || entry.classList.contains(filter)) {
+          entry.style.display = 'block';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
