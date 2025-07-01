@@ -2,44 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Submit a Tip | Watchers Circle</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Submit an Anonymous Tip</h1>
-    <p class="intro">
-      No names. No tracking. 100% anonymous.<br />
-      This is a safe space to expose harm, misconduct, or abuse of power affecting vulnerable people, communities, or the environment.
-    </p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="submit.html" class="active">Submit</a></li>
+        <li><a href="wall.html">Wall</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="details">
-    <p>Submit tips about:</p>
+  <main>
+    <p><strong>This form is 100% anonymous.</strong> No names, no logins, no tracking. You do not need to provide personal information.</p>
+
+    <p>Use this space to report concerns, harms, or misconduct that affect land, people, or community well-being — especially by those in positions of power. We welcome tips about:</p>
     <ul>
-      <li>Abuse of power by leaders, agencies, or staff</li>
-      <li>Corruption, cover-ups, or unethical behavior</li>
-      <li>Neglect or exploitation of vulnerable groups</li>
-      <li>Misuse of government or public funds</li>
-      <li>Environmental or land-based violations</li>
+      <li>Environmental violations</li>
+      <li>Exploitation of vulnerable people</li>
+      <li>Corruption within leadership or agencies</li>
+      <li>Misuse of funding or benefits</li>
+      <li>Violence, threats, or coercion</li>
     </ul>
 
-    <p>If known, include:</p>
+    <p>If known, include:
     <ul>
       <li>Location(s)</li>
-      <li>Individuals or organizations involved</li>
-      <li>Timeframes or dates</li>
-      <li>Links or supporting evidence</li>
-    </ul>
+      <li>People or organizations involved</li>
+      <li>Dates or timelines</li>
+      <li>Any links, references, or evidence</li>
+    </ul></p>
 
-    <p><em>All submissions are reviewed in private. If you want follow-up, include a ProtonMail address inside your message — optional and encrypted.</em></p>
-  </section>
+    <p><em>All submissions are reviewed in private. If you want follow-up, include a ProtonMail address inside your message — but this is not required.</em></p>
 
-  <form action="https://formspree.io/f/xnqeyrjj" method="POST" class="tip-form">
-    <label for="message">Your Message</label>
-    <textarea name="message" id="message" rows="12" required placeholder="Type your report here..."></textarea>
-    <button type="submit">Send Tip Anonymously</button>
-  </form>
+    <form action="mailto:underbrush00@proton.me" method="post" enctype="text/plain">
+      <label for="message">Your Message:</label><br>
+      <textarea id="message" name="body" rows="10" required></textarea><br>
+      <input type="submit" value="Send Anonymously" class="button" />
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Watchers Circle</p>
+  </footer>
 </body>
 </html>
