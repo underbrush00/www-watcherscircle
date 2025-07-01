@@ -91,3 +91,21 @@ footer {
   background-color: #e6e6e6;
   font-size: 0.9rem;
 }
+.entry {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.entry h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry .note {
+  font-style: italic;
+  color: #888;
+}
+
