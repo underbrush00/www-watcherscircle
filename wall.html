@@ -29,6 +29,9 @@
       <option value="services">Abuse in Services</option>
     </select>
 
+    <label for="search">Search Entries:</label>
+    <input type="text" id="search" oninput="filterEntries()" placeholder="Type keywords..." />
+
     <section class="entry environment">
       <h2>Sample Entry #1 – Environmental Harm</h2>
       <p><strong>Location:</strong> Northern Ontario, near Wabigoon River</p>
@@ -64,14 +67,13 @@
   <script>
     function filterEntries() {
       const filter = document.getElementById('filter').value;
+      const search = document.getElementById('search').value.toLowerCase();
       const entries = document.querySelectorAll('.entry');
 
       entries.forEach(entry => {
-        if (filter === 'all' || entry.classList.contains(filter)) {
-          entry.style.display = 'block';
-        } else {
-          entry.style.display = 'none';
-        }
+        const matchesCategory = filter === 'all' || entry.classList.contains(filter);
+        const matchesSearch = entry.textContent.toLowerCase().includes(search);
+        entry.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
       });
     }
   </script>
